@@ -1,4 +1,4 @@
-import torch
+;import torch
 import torch.nn as nn
 
 
@@ -8,11 +8,6 @@ class LSTMAggregator(nn.Module):
         self.aggregator = nn.LSTM(feature_dim, feature_dim, batch_first=True)
 
     def forward(self, gene_features: dict, device):
-        """
-        :param device:
-        :param gene_features: key: node idx, value: set of features
-        :return:
-        """
         n_data_feature = []
         node_seq = sorted(list(gene_features.keys()))
         for i in node_seq:
